@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flotación sin display</title>
+  <style>
+    .box {
+      float: left;           /* el elemento flota a la izquierda */
+      width: 140px;
+      margin: 0 16px 8px 0;  /* separa el texto del cuadro */
+      padding: 16px;
+      background: #1d4ed8;   /* azul */
+      color: #fff;
+      border-radius: 8px;
+      /* sin display */
+    }
+
+    .clear {
+      clear: both;           /* fuerza a colocarse debajo de la flotación */
+      margin-top: 8px;
+      border-top: 1px dashed #bbb;
+      padding-top: 8px;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      max-width: 650px;
+      margin: 24px auto;
+      padding: 0 12px;
+      font: 16px/1.6 Georgia, serif;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo sencillo de flotación</h1>
+
+  <div class="box">Float</div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam
+    dolor, eu lacinia lorem placerat vulputate. Duis felis orci, pulvinar id metus
+    ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus
+    laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum,
+    tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus
+    neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+    volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros
+    pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec
+    lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.
+  </p>
+
+  <p class="clear">
+    Este párrafo usa <code>clear: both</code> para “cerrar” la flotación y situarse debajo.
+  </p>
+
+  <!-- Prueba en clase:
+  .box { float: right; margin: 0 0 8px 16px; }  // flotación a la derecha
+  -->
+</body>
+</html>

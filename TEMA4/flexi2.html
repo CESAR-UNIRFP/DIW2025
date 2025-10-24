@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Main axis vs Cross axis (Flexbox)</title>
+<link rel="stylesheet" href="css/estilo2.css">
+</head>
+<body>
+
+  <h2>1) flex-direction: <code>row</code> (main axis horizontal)</h2>
+  <p class="hint">El eje principal recorre la fila (izq→der). El eje transversal es vertical (arriba↕abajo).</p>
+  <div class="flex row axes">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+  <p class="legend">
+    <span class="main">— Eje principal</span>
+    <span class="cross">| Eje transversal</span>
+  </p>
+
+  <h2>2) flex-direction: <code>column</code> (main axis vertical)</h2>
+  <p class="hint">Ahora el eje principal es vertical (arriba→abajo). El transversal es horizontal (izq↔der).</p>
+  <div class="flex col axes">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+  <p class="legend">
+    <span class="main">| Eje principal</span>
+    <span class="cross">— Eje transversal</span>
+  </p>
+
+</body>
+</html>

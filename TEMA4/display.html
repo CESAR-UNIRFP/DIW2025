@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>display: block vs inline</title>
+  <style>
+    div {
+      color: white;
+      margin: 1px;
+    }
+
+    .block {
+      background: darkblue;
+    }
+
+    .inline {
+      background: darkred;
+      display: inline;
+    }
+
+    .demo {
+      border: 1px dashed #999;
+      padding: 8px;
+      max-width: 520px;
+      font-family: system-ui, sans-serif;
+    }
+
+    .block { padding: 10px; }
+    .inline { padding: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo sencillo: display block vs inline</h1>
+  <p>Los elementos <code>.block</code> ocupan todo el ancho (cada uno en su línea). Los <code>.inline</code> se colocan en la misma línea si hay espacio.</p>
+
+  <div class="demo">
+    <div class="inline">Elemento 1</div>
+    <div class="inline">Elemento 2</div>
+    <div class="inline">Elemento 3</div>
+    <div class="inline">Elemento 4</div>
+  </div>
+</body>
+</html>
