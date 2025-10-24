@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con CSS en línea</title>
+</head>
+<body>
+    <h1 >Título de la página</h1>
+    <p >
+        Este es un párrafo con estilos en línea.
+    </p>
+    <div >
+        <p>Contenido dentro de un cuadro.</p>
+    </div>
+</body>
+</html>
