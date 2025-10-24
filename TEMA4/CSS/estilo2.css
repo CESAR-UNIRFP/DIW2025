@@ -1,0 +1,42 @@
+  body{font-family:sans-serif;margin:20px}
+  h2{margin:16px 0 8px}
+  .hint{color:#555;margin:0 0 12px}
+
+  .flex {
+    display:flex;
+    border:2px dashed #999;
+    padding:12px;
+    gap:8px;
+    height:120px;              
+    background:#f7f7f7;
+  }
+
+  .row { flex-direction: row; }
+
+  .col { flex-direction: column; height:220px; width:320px; }
+
+  .item{
+    background:#19e0e0; color:#063b3b; padding:8px 10px; border-radius:6px;
+  }
+
+  .axes { position:relative; }
+  .axes::before, .axes::after{
+    content:""; position:absolute; inset:auto; pointer-events:none;
+  }
+  .row.axes::before{
+    left:8px; right:8px; top:50%; height:0; border-top:3px solid #e11d48;
+  }
+  .col.axes::before{
+    top:8px; bottom:8px; left:50%; width:0; border-left:3px solid #e11d48;
+  }
+  .row.axes::after{
+    top:8px; bottom:8px; left:50%; width:0; border-left:3px solid #2563eb;
+  }
+  .col.axes::after{
+    left:8px; right:8px; top:50%; height:0; border-top:3px solid #2563eb;
+  }
+
+  .legend{font-size:.9rem;margin:6px 0 0;color:#333}
+  .legend span{display:inline-block;margin-right:12px}
+  .main{color:#e11d48;font-weight:700}
+  .cross{color:#2563eb;font-weight:700}

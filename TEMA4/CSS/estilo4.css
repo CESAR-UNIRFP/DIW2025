@@ -1,0 +1,16 @@
+  .barra {
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;           
+    padding: 8px;
+    font-family: sans-serif;
+  }
+
+  button { 
+    padding: 8px 12px; 
+  }
+  .alto  { 
+    padding: 20px 12px; 
+  }  
