@@ -1,0 +1,61 @@
+
+/* ABSOLUTAS */
+body {
+    margin: 0.5in; /* Media pulgada */
+}
+h1 {
+    line-height: 2cm; /* 2 centímetros */
+}
+p.absolute {
+    word-spacing: 4mm; /* 4 milímetros */
+}
+a {
+    font-size: 12pt; /* 12 puntos tipográficos */
+}
+span {
+    font-size: 1pc; /* 1 pica (12 puntos tipográficos) */
+    margin: 0; /* Sin margen */
+}
+
+/* RELATIVAS */
+body {
+    font-size: 10px; /* Base para unidades relativas */
+}
+h1.relative {
+    font-size: 2.5em; /* 2.5 veces el tamaño del texto base */
+}
+p.relative {
+    font-size: 32px; /* Tamaño absoluto en píxeles */
+    margin: 0.5em; /* Margen relativo al tamaño de fuente */
+    line-height: 1.5; /* Altura de línea 1.5 veces el tamaño de fuente */
+}
+
+/* ANIMACIONES */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* NUEVO DIV */
+div {
+    margin: 10px;
+    font-size: 200%;
+    color: white;
+    height: 150px;
+    border: 2px solid black;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* APLICAR ROTACIÓN */
+.rotate-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 3s linear infinite;
+}
