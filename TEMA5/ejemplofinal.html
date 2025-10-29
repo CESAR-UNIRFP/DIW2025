@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Multimedia HTML5</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Galería Multimedia HTML5</h1>
+    <p>Imágenes, vídeo y audio integrados con estilo</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- Galería de imágenes -->
+    <section class="gallery">
+      <img src="https://picsum.photos/400/250?1" alt="Imagen 1" loading="lazy">
+      <img src="https://picsum.photos/400/250?2" alt="Imagen 2" loading="lazy">
+      <img src="https://picsum.photos/400/250?3" alt="Imagen 3" loading="lazy">
+      <img src="https://picsum.photos/400/250?4" alt="Imagen 4" loading="lazy">
+    </section>
+
+    <!-- Vídeo -->
+    <section class="video-section">
+      <h2>Vídeo de demostración</h2>
+      <video id="myVideo" controls poster="https://picsum.photos/600/300">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        Tu navegador no soporta vídeo HTML5.
+      </video><br>
+      <button onclick="playVid()">Reproducir</button>
+      <button onclick="pauseVid()">Pausar</button>
+    </section>
+
+    <!-- 
+    <video controls width="300">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+
+<video controls width="300">
+  <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+</video>
+
+    Audio 
+    
+    <audio controls>
+  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+</audio>
+
+<audio controls>
+  <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+</audio>
+    
+
+    -->
+    <section class="audio-section">
+      <h2>Escucha una muestra de audio</h2>
+      <audio controls loop>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </section>
+
+  </div>
+
+  <script>
+    const vid = document.getElementById("myVideo");
+    function playVid() { vid.play(); }
+    function pauseVid() { vid.pause(); }
+  </script>
+
+</body>
+</html>
