@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo viewport</title>
+
+  <!-- PRUEBA 1: CON viewport (recomendado) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- PRUEBA 2: SIN viewport -> comenta la línea de arriba -->
+  <!-- (en móviles reales suele verse “alejado”: texto pequeño y todo reducido) -->
+
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { padding: 16px; background: #111; color: #fff; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 16px; }
+
+    .grid {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+    }
+    nav {
+      flex: 0 0 260px;
+      padding: 16px;
+      border: 2px solid #111;
+    }
+    main {
+      flex: 1;
+      padding: 16px;
+      border: 2px solid #111;
+    }
+    .card {
+      margin-top: 12px;
+      padding: 12px;
+      border: 2px dashed #111;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    /* Breakpoint “móvil” */
+    @media (max-width: 600px) {
+      .grid { flex-direction: column; }
+      nav { flex-basis: auto; }
+      header { position: sticky; top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Demo viewport + media query (max-width: 600px)
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <nav>
+        <b>Menú</b>
+        <div class="card">En móvil debería ir arriba y luego el contenido.</div>
+        <div class="card">Si se ve “alejado” y pequeñito, falta el viewport.</div>
+      </nav>
+
+      <main>
+        <b>Contenido</b>
+        <div class="card">
+          Esta tarjeta tiene texto relativamente grande. Con viewport se ve legible.
+          Además, al bajar de 600px las columnas se apilan (1 columna).
+        </div>
+        <div class="card">
+          Prueba a “rotar” el dispositivo en el emulador: con viewport, el layout se recalcula
+          con el ancho real.
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

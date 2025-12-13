@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .grid{display:flex;flex-wrap:wrap;gap:10px}
+  .card{border:2px solid #111;padding:12px;flex:1 0 30%}      /* ~3 por fila */
+  @media (max-width:900px){ .card{flex-basis:48%} }          /* ~2 por fila */
+  @media (max-width:600px){ .card{flex-basis:100%} }         /* 1 por fila */
+</style>
+<div class="grid">
+  <div class="card">A</div><div class="card">B</div><div class="card">C</div><div class="card">D</div>
+</div>
+</html>

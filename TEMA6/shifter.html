@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .layout{display:grid;gap:10px}
+  .b{border:2px solid #111;padding:12px}
+  /* móvil: todo en columna */
+  .layout{grid-template-columns:1fr; grid-template-areas:"h" "m" "n"}
+  .h{grid-area:h}.n{grid-area:n}.m{grid-area:m}
+  /* desktop: nav a la izquierda y main a la derecha */
+  @media (min-width:700px){
+    .layout{grid-template-columns:200px 1fr; grid-template-areas:"h h" "n m"}
+  }
+</style>
+<div class="layout">
+  <div class="b h">Header</div>
+  <div class="b n">Nav</div>
+  <div class="b m">Main</div>
+</div>
+</html>

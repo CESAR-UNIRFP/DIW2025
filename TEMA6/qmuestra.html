@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .solo-escritorio { display: block; }
+
+    @media (max-width: 600px) {
+      .solo-escritorio { display: none; }  /* en móvil desaparece */
+    }
+  </style>
+</head>
+<body>
+  <div class="solo-escritorio">Esto solo se ve en pantallas grandes.</div>
+  <div>Esto se ve siempre.</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejemplo 3 - CSS Grid (áreas + 2 breakpoints)</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body { margin: 0; font-family: Arial, sans-serif; }
+    h1 { margin: 0; padding: 16px; background: #111; color: #fff; font-size: 18px; }
+
+    .layout{
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+
+      /* Mobile first: 1 columna */
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "h"
+        "n"
+        "m"
+        "a"
+        "f";
+    }
+
+    .layout > *{
+      border: 2px solid #111;
+      padding: 14px;
+      background: #f5f5f5;
+      min-height: 70px;
+    }
+
+    /* Asignación de áreas */
+    .h{ grid-area: h; }
+    .n{ grid-area: n; }
+    .m{ grid-area: m; }
+    .a{ grid-area: a; }
+
+    .f{ grid-area: f; }
+
+    /* Tablet: 2 columnas (nav + main), aside debajo */
+    @media (min-width: 576px){
+      .layout{
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+          "h h"
+          "n m"
+          "a a"
+          "f f";
+      }
+    }
+
+    /* Desktop: 3 columnas (nav, main, aside) */
+    @media (min-width: 992px){
+      .layout{
+        max-width: 1100px;
+        margin: 0 auto;
+        grid-template-columns: 220px 1fr 260px;
+        grid-template-areas:
+          "h h h"
+          "n m a"
+          "f f f";
+      }
+    }
+
+    .tag{
+      display:inline-block;
+      border: 2px solid #111;
+      padding: 3px 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo 3 — CSS Grid: layout 2D + grid-template-areas + breakpoints</h1>
+
+  <div class="layout">
+    <header class="h">
+      <b>Header</b>
+      <div class="tag">Área: h</div>
+    </header>
+
+    <nav class="n">
+      <b>Nav</b>
+      <div class="tag">Área: n</div>
+      <p>En tablet va a la izquierda del contenido; en desktop mantiene su columna.</p>
+    </nav>
+
+    <main class="m">
+      <b>Main</b>
+      <div class="tag">Área: m</div>
+      <p>Grid permite recolocar áreas solo con CSS (sin cambiar el HTML).</p>
+    </main>
+
+    <aside class="a">
+      <b>Aside</b>
+      <div class="tag">Área: a</div>
+      <p>En mobile queda debajo del contenido; en desktop pasa a la derecha.</p>
+    </aside>
+
+    <footer class="f">
+      <b>Footer</b>
+      <div class="tag">Área: f</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini demo media queries</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f6f6f6; }
+
+    .card{
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 16px;
+      border: 2px solid #111;
+      background: white;
+    }
+
+    .titulo{ font-size: 28px; margin: 0 0 12px 0; }
+    .tag{ display:inline-block; border:2px solid #111; padding:4px 10px; margin-right: 8px; }
+    .cols{ display:flex; gap: 12px; }
+    .col{ flex: 1; border:2px dashed #111; padding: 12px; }
+
+    /* 1) MÓVIL (<=600px): apila columnas */
+    @media (max-width: 600px){
+      .cols{ flex-direction: column; }        /* (1) layout: 2→1 columna */
+    }
+
+    /* 2) TABLET (>=700px): sube tamaño de título */
+    @media (min-width: 700px){
+      .titulo{ font-size: 34px; }             /* (2) tipografía: título más grande */
+    }
+
+    /* 3) DESKTOP (>=900px): card centrada con más padding */
+    @media (min-width: 900px){
+      .card{ padding: 28px; }                 /* (3) espaciado: más aire */
+    }
+
+    /* 4) PANTALLA MUY GRANDE (>=1100px): tags en “modo compacto” */
+    @media (min-width: 1100px){
+      .tag{ padding: 2px 8px; }               /* (4) detalle: chips más compactas */
+    }
+
+    /* 5) LANDSCAPE (horizontal): cambia el fondo */
+    @media (orientation: landscape){
+      body{ background: #e9eef8; }            /* (5) contexto: detecta orientación */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1 class="titulo">Media queries (demo bonita y simple)</h1>
+
+    <div>
+      <span class="tag">Móvil</span>
+      <span class="tag">Tablet</span>
+      <span class="tag">Desktop</span>
+    </div>
+
+    <div class="cols" style="margin-top: 14px;">
+      <div class="col">
+        <b>Columna 1</b>
+        <p>Reduce el ancho: verás cómo se apila.</p>
+      </div>
+      <div class="col">
+        <b>Columna 2</b>
+        <p>Aumenta el ancho: cambia el tamaño del título y el padding.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

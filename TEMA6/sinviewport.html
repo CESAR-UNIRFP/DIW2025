@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Sin viewport</title>
+  <!-- NO hay meta viewport -->
+  <style>
+    body{font-family: Arial, sans-serif; margin: 0;}
+    .box{
+      width: 360px;
+      margin: 16px auto;
+      padding: 16px;
+      border: 2px solid #000;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Caja de 360px. En móvil, SIN viewport, suele verse “lejos” (texto pequeño) porque el navegador
+    simula un ancho de escritorio y luego hace zoom out.
+  </div>
+</body>
+</html>

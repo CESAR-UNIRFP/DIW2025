@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .caja { border: 2px solid black; padding: 10px; margin: 8px 0; }
+
+    /* Móvil (por defecto): 1 columna */
+    .columna { width: 100%; }
+
+    /* Escritorio: 2 columnas */
+    @media (min-width: 700px) {
+      .columna { width: 49%; display: inline; vertical-align: top; }
+    }
+  </style>
+</head>
+<body>
+  <div class="caja columna">Columna 1</div>
+  <div class="caja columna">Columna 2</div>
+</body>
+</html>

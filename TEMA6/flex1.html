@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejemplo 1 - Floats (parrilla 12 columnas)</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body { margin: 0; font-family: Arial, sans-serif; }
+    h1 { margin: 0; padding: 16px; background: #111; color: #fff; font-size: 18px; }
+
+    .contenedor{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* 12 columnas (solo algunas para el ejemplo) */
+    .col-3 { width: 25%; }
+    .col-9 { width: 75%; }
+
+    [class*="col-"]{
+      float: left;
+      padding: 15px;
+    }
+
+    .caja{ border: 2px solid #111; background: #f5f5f5; }
+    .nota{ margin-top: 12px; border: 2px dashed #111; padding: 10px; }
+
+    /* Clearfix: evita que elementos posteriores “suban” a huecos */
+.fila::after{
+  content:"";        /* crea un elemento invisible al final de .fila */
+  clear: both;       /* obliga a que ese elemento se coloque debajo de los floats */
+  display: table;    /* hace que el pseudo-elemento cuente y la fila recupere altura */
+}
+
+    /* para que en móvil se apile (opcional, pero útil para probar) */
+    /*Si la pantalla (o el viewport) mide 768px o menos de ancho…
+     …entonces la columna .col-3 y la .col-9 pasan a medir 100% de ancho.
+    */
+    @media (max-width: 768px){
+      .col-3, .col-9 { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo 1 — Floats: contenedor → fila → columnas + clearfix</h1>
+
+  <div class="contenedor">
+    <div class="fila">
+      <div class="col-3 caja">
+        <b>Sidebar</b><br>
+        (3/12 = 25%)
+      </div>
+      <div class="col-9 caja">
+        <b>Contenido</b><br>
+        (9/12 = 75%)<br><br>
+        Aquí se ve cómo las columnas flotan a la izquierda.
+      </div>
+    </div>
+
+    <p class="nota">
+      Este párrafo va DESPUÉS de la fila. Gracias al clearfix (.fila::after),
+      no “sube” a ocupar huecos creados por los floats.
+    </p>
+  </div>
+</body>
+</html>

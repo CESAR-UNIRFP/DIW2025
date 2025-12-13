@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .fila{display:flex;gap:10px}
+  .side{border:2px solid #111;padding:12px;flex:0 0 30%}
+  .main{border:2px solid #111;padding:12px;flex:1}
+  @media (max-width:600px){ .fila{flex-direction:column} }   /* se apila */
+</style>
+<div class="fila">
+  <div class="side">Sidebar</div>
+  <div class="main">Contenido</div>
+</div>
+</html>

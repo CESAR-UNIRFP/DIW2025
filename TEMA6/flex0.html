@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox básico</title>
+  <style>
+    .contenedor{
+      display: flex;              /* ✅ Esto lo convierte en FLEX CONTAINER */
+      border: 2px solid #000;
+      padding: 10px;
+      gap: 10px;                  /* separación entre items */
+      height: 140px;              /* para ver bien el cross axis */
+    }
+
+    .item{
+      border: 2px solid #000;
+      padding: 10px;
+      background: #eaeaea;
+      flex: 1;                    /* ✅ Todos crecen igual en el MAIN AXIS */
+    }
+
+    /* Cambia esto a column para ver cómo cambia el eje principal */
+    .columna{
+      flex-direction: column;     /* ✅ Ahora el MAIN AXIS es vertical */
+    }
+  </style>
+</head>
+<body>
+
+  <h3>1) Por defecto (main axis = horizontal)</h3>
+  <div class="contenedor">
+    <div class="item">Item 1</div>  <!-- ✅ FLEX ITEM (hijo directo) -->
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>2) Con flex-direction: column (main axis = vertical)</h3>
+  <div class="contenedor columna">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+</body>
+</html>
