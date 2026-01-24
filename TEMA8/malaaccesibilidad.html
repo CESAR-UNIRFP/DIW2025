@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo poco accesible</title>
+
+  <style>
+    /* 1) Bajo contraste + tamaños pequeños */
+    body{
+      background:#f7f7f7;
+      color:#cfcfcf;            /* texto muy claro */
+      font-family: Arial, sans-serif;
+      font-size:12px;           /* pequeño */
+      line-height:1.1;          /* apretado */
+    }
+
+    /* 2) Quitar indicadores de foco (malísimo para teclado) */
+    *:focus{ outline:none; }
+
+    /* 3) Enlaces “invisibles” (subrayado quitado + contraste bajo) */
+    a{
+      color:#d9d9d9;
+      text-decoration:none;
+    }
+
+    /* 4) Botón falso (div clicable) */
+    .fake-button{
+      display:inline-block;
+      padding:10px;
+      background:#fafafa;
+      border:1px solid #eee;
+      cursor:pointer;
+      user-select:none;
+      margin-top:10px;
+    }
+
+    /* 5) “Menú” no semántico */
+    .menu{
+      background:#ffffff;
+      padding:8px;
+      margin-bottom:10px;
+    }
+
+    /* 6) Campos pequeños y poco legibles */
+    input{
+      font-size:12px;
+      padding:4px;
+      width:220px;
+      border:1px solid #eaeaea;
+    }
+
+    /* 7) Texto importante solo por color */
+    .warning{ color:#d9d9d9; } /* casi igual que el resto */
+
+    /* 8) Animación rápida (puede molestar) */
+    .blink{
+      animation: blink 0.4s infinite;
+    }
+    @keyframes blink{
+      0%{ opacity:1; }
+      50%{ opacity:0; }
+      100%{ opacity:1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sin lang en <html> (WAVE lo suele marcar) -->
+
+  <!-- Estructura no semántica con divs -->
+  <div class="menu">
+    <div style="font-size:18px;">Mi Web</div>
+    <div>
+      <!-- Texto de enlace poco descriptivo -->
+      <a href="#sec1">Haz clic</a> |
+      <a href="#sec2">Aquí</a> |
+      <a href="#sec3">Más</a>
+    </div>
+  </div>
+
+  <!-- Imagen sin alt -->
+  <img src="https://via.placeholder.com/700x180" style="width:100%;max-width:700px;">
+
+  <!-- Encabezados mal jerarquizados (salta de h1 a h3) -->
+  <h1>Bienvenido</h1>
+  <h3 id="sec1">Sección de contenido</h3>
+
+  <p class="warning">
+    IMPORTANTE: si no ves esto, da igual (texto solo por “color”, sin contraste).
+  </p>
+
+  <!-- Formulario poco accesible: sin labels, inputs sin id, placeholder como “etiqueta” -->
+  <div id="sec2">
+    <div style="margin-top:10px; font-size:16px;">Contacto</div>
+
+    <form action="#" method="post">
+      <p>Nombre:</p>
+      <input type="text" placeholder="Escribe tu nombre">
+
+      <p>Email:</p>
+      <input type="email" placeholder="tu@email.com">
+
+      <!-- checkbox sin label -->
+      <div style="margin-top:8px;">
+        <input type="checkbox"> Acepto cosas
+      </div>
+
+      <!-- Enviar como div clicable (no accesible con teclado) -->
+      <div class="fake-button" onclick="enviarFormulario()">
+        Enviar
+      </div>
+    </form>
+  </div>
+
+  <!-- Elemento interactivo no semántico -->
+  <div id="sec3" style="margin-top:16px;">
+    <div class="blink">OFERTA FLASH</div>
+
+    <div onclick="alert('Abrir detalles')" style="margin-top:10px;">
+      Pulsa para ver detalles (pero no es botón ni enlace)
+    </div>
+  </div>
+
+  <script>
+    function enviarFormulario(){
+      alert("Formulario enviado (falso).");
+    }
+  </script>
+</body>
+</html>

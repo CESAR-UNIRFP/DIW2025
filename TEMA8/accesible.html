@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Demo accesible</title>
+
+  <style>
+    body{
+      background:#ffffff;
+      color:#222222;
+      font-family: Arial, sans-serif;
+      font-size:16px;
+      line-height:1.6;
+      margin:0;
+      padding:0;
+    }
+
+    header{
+      background:#f2f2f2;
+      padding:16px;
+    }
+
+    nav ul{
+      list-style:none;
+      margin:8px 0 0 0;
+      padding:0;
+      display:flex;
+      gap:16px;
+    }
+
+    nav a{
+      color:#005fcc;
+      text-decoration:underline;
+    }
+
+    nav a:focus,
+    nav a:hover{
+      outline:2px solid #005fcc;
+    }
+
+    main{
+      padding:20px;
+      max-width:800px;
+      margin:auto;
+    }
+
+    h1, h2{
+      color:#000000;
+    }
+
+    /* El aviso ya no depende solo del color */
+    .warning{
+      background:#fff3cd;
+      color:#664d03;
+      padding:12px;
+      border-left:4px solid #ffca2c;
+      margin:16px 0;
+    }
+
+    form{
+      margin-top:20px;
+    }
+
+    label{
+      display:block;
+      margin-top:12px;
+      font-weight:bold;
+    }
+
+    input[type="text"],
+    input[type="email"]{
+      font-size:16px;
+      padding:8px;
+      width:100%;
+      max-width:320px;
+      margin-top:4px;
+    }
+
+    .checkbox-group{
+      margin-top:12px;
+    }
+
+    button{
+      margin-top:16px;
+      padding:10px 16px;
+      font-size:16px;
+      background:#005fcc;
+      color:#ffffff;
+      border:none;
+      cursor:pointer;
+    }
+
+    button:focus{
+      outline:3px solid #000000;
+    }
+
+    /* Animación eliminada (no necesaria) */
+    .promo{
+      margin-top:20px;
+      padding:12px;
+      background:#e7f1ff;
+      border:1px solid #b6d4fe;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mi Web</h1>
+  <nav>
+    <ul>
+      <!-- Mismos destinos, texto ahora descriptivo -->
+      <li><a href="#sec1">Sección de contenido</a></li>
+      <li><a href="#sec2">Contacto</a></li>
+      <li><a href="#sec3">Más información</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- MISMA imagen, ahora con alt -->
+  <img
+    src="https://via.placeholder.com/700x180"
+    alt="Imagen de cabecera de la web"
+    style="max-width:100%; height:auto;"
+  >
+
+  <section id="sec1">
+    <h2>Sección de contenido</h2>
+
+    <div class="warning">
+      <strong>IMPORTANTE:</strong> si no ves esto, da igual (texto ahora claramente legible).
+    </div>
+  </section>
+
+  <section id="sec2">
+    <h2>Contacto</h2>
+
+    <form action="#" method="post">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="acepto" name="acepto">
+        <label for="acepto">Acepto cosas</label>
+      </div>
+
+      <!-- MISMA acción, ahora botón real -->
+      <button type="submit" onclick="enviarFormulario()">
+        Enviar
+      </button>
+    </form>
+  </section>
+
+  <section id="sec3">
+    <h2>Más</h2>
+
+    <!-- MISMO texto que antes, sin parpadeo -->
+    <div class="promo">
+      <p><strong>OFERTA FLASH</strong></p>
+
+      <!-- MISMA funcionalidad, ahora accesible -->
+      <button type="button" onclick="alert('Abrir detalles')">
+        Pulsa para ver detalles
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function enviarFormulario(){
+    alert("Formulario enviado (falso).");
+  }
+</script>
+
+</body>
+</html>

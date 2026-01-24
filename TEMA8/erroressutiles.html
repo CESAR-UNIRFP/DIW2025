@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo con errores sutiles</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#ffffff;
+      color:#333333;
+      font-size:16px;
+      line-height:1.5;
+      margin:0;
+    }
+
+    header{
+      background:#eeeeee;
+      padding:16px;
+    }
+
+    nav a{
+      color:#0066cc;
+      margin-right:16px;
+      text-decoration:none;
+    }
+
+    nav a:hover{
+      text-decoration:underline;
+    }
+
+    main{
+      max-width:800px;
+      margin:auto;
+      padding:20px;
+    }
+
+    /* ⚠️ Contraste JUSTO (falla WCAG AA en texto pequeño) */
+    .secondary-text{
+      color:#777777;
+      font-size:14px;
+    }
+
+    /* ⚠️ Foco visible eliminado SOLO visualmente */
+    button:focus{
+      outline:none;
+    }
+
+    form{
+      margin-top:20px;
+    }
+
+    label{
+      font-weight:bold;
+    }
+
+    input{
+      display:block;
+      margin:6px 0 12px 0;
+      padding:6px;
+      font-size:14px;
+      width:300px;
+    }
+
+    /* ⚠️ Uso de color como única señal */
+    .error{
+      color:#cc0000;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mi Web Profesional</h1>
+
+  <!-- ⚠️ Nav correcta pero sin lista -->
+  <nav>
+    <a href="#info">Información</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="info">
+    <h2>Información</h2>
+
+    <p>
+      Esta web cumple aparentemente con buenas prácticas modernas
+      y tiene un diseño limpio y funcional.
+    </p>
+
+    <!-- ⚠️ Imagen con alt poco significativo -->
+    <img
+      src="https://via.placeholder.com/600x200"
+      alt="imagen"
+      style="max-width:100%;height:auto;"
+    >
+
+    <p class="secondary-text">
+      Texto secundario con menos importancia visual.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+
+    <form action="#" method="post">
+      <!-- ⚠️ Label existe pero no asociado -->
+      <label>Nombre</label>
+      <input type="text" name="nombre">
+
+      <label>Email</label>
+      <input type="email" name="email">
+
+      <!-- ⚠️ Mensaje de error solo por color -->
+      <span class="error">Campo obligatorio</span>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+</body>
+</html>

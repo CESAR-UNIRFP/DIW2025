@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo con errores sutiles (reparado)</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#ffffff;
+      color:#333333;
+      font-size:16px;
+      line-height:1.5;
+      margin:0;
+    }
+
+    header{
+      background:#eeeeee;
+      padding:16px;
+    }
+
+    nav ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      gap:16px;
+    }
+
+    nav a{
+      color:#0066cc;
+      text-decoration:none;
+    }
+
+    nav a:hover,
+    nav a:focus{
+      text-decoration:underline;
+      outline:2px solid #0066cc;
+    }
+
+    main{
+      max-width:800px;
+      margin:auto;
+      padding:20px;
+    }
+
+    /* Contraste corregido */
+    .secondary-text{
+      color:#555555;
+      font-size:14px;
+    }
+
+    form{
+      margin-top:20px;
+    }
+
+    label{
+      font-weight:bold;
+      display:block;
+    }
+
+    input{
+      display:block;
+      margin:6px 0 12px 0;
+      padding:6px;
+      font-size:14px;
+      width:300px;
+    }
+
+    /* Error no depende solo del color */
+    .error{
+      color:#b00020;
+      font-weight:bold;
+    }
+
+    .error::before{
+      content:"⚠ ";
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mi Web Profesional</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#info">Información</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section id="info">
+    <h2>Información</h2>
+
+    <p>
+      Esta web cumple aparentemente con buenas prácticas modernas
+      y tiene un diseño limpio y funcional.
+    </p>
+
+    <!-- MISMA imagen, alt reparado -->
+    <img
+      src="https://via.placeholder.com/600x200"
+      alt="Imagen decorativa de cabecera de la sección de información"
+      style="max-width:100%;height:auto;"
+    >
+
+    <p class="secondary-text">
+      Texto secundario con menos importancia visual.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+
+    <form action="#" method="post">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+
+      <span class="error">Campo obligatorio</span>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</main>
+
+</body>
+</html>
