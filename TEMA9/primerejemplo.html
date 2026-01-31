@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utilities Bootstrap - Básico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Caja con padding, margen, color y texto centrado -->
+  <div class="container mt-4">
+    <div class="bg-primary text-white p-3 text-center rounded">
+      Soy una caja con <b>bg-primary</b>, <b>text-white</b>, <b>p-3</b> y <b>text-center</b>.
+    </div>
+
+    <!-- Flex: dos elementos alineados y separados -->
+    <div class="d-flex justify-content-between align-items-center bg-warning p-3 mt-4 rounded">
+      <span class="fw-bold">Izquierda</span>
+      <span class="bg-dark text-white px-3 py-1 rounded">Derecha</span>
+    </div>
+
+    <!-- Flex con gap: elementos con separación automática -->
+    <div class="d-flex gap-3 mt-4">
+      <div class="bg-success text-white p-3 rounded">A</div>
+      <div class="bg-success text-white p-3 rounded">B</div>
+      <div class="bg-success text-white p-3 rounded">C</div>
+    </div>
+  </div>
+
+</body>
+</html>

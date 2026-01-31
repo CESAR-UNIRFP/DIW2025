@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Forms: input, form-text y select</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+</head>
+
+<body class="py-5">
+  <div class="container" style="max-width: 560px;">
+    <h1 class="h4 mb-4">Ejemplo visual: 3 controles clave</h1>
+
+    <form class="border rounded p-4 bg-light">
+
+      <!-- 1) INPUT + form-text (bloque) -->
+      <div class="mb-4">
+        <label for="email" class="form-label">1) Input (email)</label>
+        <input type="email" class="form-control" id="email" placeholder="nombre@correo.com">
+
+        <!-- .form-text = texto de ayuda debajo (nivel bloque) -->
+        <div class="form-text">
+          .form-text: texto de ayuda en bloque (sale debajo del input).
+        </div>
+      </div>
+
+      <!-- 2) INPUT + form-text (en línea) -->
+      <div class="mb-4">
+        <label for="user" class="form-label">2) Input (usuario) + ayuda en línea</label>
+
+        <div class="d-flex align-items-center gap-3">
+          <input type="text" class="form-control" id="user" placeholder="Tu usuario">
+
+          <!-- .form-text puede ir en línea si lo metes en un contenedor flex -->
+          <span class="form-text m-0" style="white-space: nowrap;">
+            .form-text en línea
+          </span>
+        </div>
+      </div>
+
+      <!-- 3) SELECT + form-select -->
+      <div class="mb-4">
+        <label for="curso" class="form-label">3) Select (menú desplegable)</label>
+
+        <!-- .form-select aplica estilos a la caja del select -->
+        <select class="form-select" id="curso">
+          <option selected>Elige una opción…</option>
+          <option value="1">DAW</option>
+          <option value="2">DAM</option>
+          <option value="3">ASIR</option>
+        </select>
+
+        <div class="form-text">
+          .form-select personaliza el <strong>select</strong>, pero no puede cambiar el estilo de las <strong>option</strong>
+          (limitación del navegador).
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+    <p class="text-muted mt-3 mb-0">
+      Idea clave: <strong>form-control</strong> para <code>&lt;input&gt;</code>, <strong>form-select</strong> para <code>&lt;select&gt;</code>
+      y <strong>form-text</strong> para textos de ayuda.
+    </p>
+  </div>
+</body>
+</html>

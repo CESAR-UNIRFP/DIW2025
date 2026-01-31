@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>Ejemplo 2</title>
+</head>
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-3">JS sin Popper (Collapse)</h1>
+
+    <button class="btn btn-outline-primary"
+            data-bs-toggle="collapse"
+            data-bs-target="#bloque">
+      Abrir / Cerrar
+    </button>
+
+    <div id="bloque" class="collapse mt-3">
+      <div class="card card-body">
+        Esto se abre y se cierra con Bootstrap JS, sin Popper.
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+          integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+          crossorigin="anonymous"></script>
+</body>
+</html>

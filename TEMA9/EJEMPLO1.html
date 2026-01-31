@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejemplo 1 - container vs container-fluid</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="py-4">
+  <h1 class="text-center mb-4">Containers</h1>
+
+  <!-- container: centrado y con max-width según breakpoint -->
+  <section class="container border rounded p-3 mb-4">
+    <h2 class="h4">.container</h2>
+    <p class="mb-0">
+      Estoy centrado y mi ancho máximo cambia según el tamaño de pantalla.
+      Prueba a redimensionar la ventana.
+    </p>
+  </section>
+
+  <!-- container-fluid: ocupa el 100% siempre -->
+  <section class="container-fluid border rounded p-3">
+    <h2 class="h4">.container-fluid</h2>
+    <p class="mb-0">
+      Ocupo el 100% del ancho SIEMPRE.
+    </p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+</body>
+</html>
